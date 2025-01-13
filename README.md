@@ -66,7 +66,7 @@ To install the dependencies, follow these steps:
 5. Use the `generate_image.py` script to generate images from sketches:
 
    ```bash
-   python generate_image.py --input path/to/sketch --output path/to/output/image
+   python generate_image.py
    ```
 
 6. Open your web browser and navigate to `http://localhost:3000` to use the application.
