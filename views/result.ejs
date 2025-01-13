@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Caption Result</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', Arial, sans-serif;
+      background: linear-gradient(135deg, #f0f2f5, #d9e4f5);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    nav {
+      width: 100%;
+      background-color: rgb(176, 38, 25) !important; /* Updated color */
+      padding: 1em 0;
+      position: fixed;
+      top: 0;
+      left: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      z-index: 10;
+    }
+    nav img {
+      height: 40px;
+      margin-left: 20px;
+    }
+    nav .title {
+      color: white;
+      font-size: 1.2em;
+      font-weight: 600;
+      text-align: center;
+    }
+    nav .group {
+      color: white;
+      font-size: 1em;
+      margin-right: 20px;
+    }
+    .container {
+      text-align: center;
+      background: white;
+      padding: 2em;
+      border-radius: 12px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+      margin-top: 8em;
+      animation: fadeIn 1.5s ease-in-out;
+      width: 90%;
+      max-width: 900px;
+    }
+    h1 {
+      color: #3e497a;
+    }
+    .images-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      margin-top: 2em;
+    }
+    .image-box {
+      width: 45%;
+      text-align: center;
+    }
+    .image-box img {
+      width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 2em auto 0;
+      padding: 0.75em 1.5em;
+      font-size: 1em;
+      color: #fff;
+      background-color: rgb(176, 38, 25);
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    button img {
+      height: 20px;
+      margin-right: 10px;
+    }
+    button:hover {
+      background-color: rgb(176, 38, 25);
+    }
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <img src="images/logo.png" alt="CMU SCS Logo">
+    <div class="title">Intro to Deep Learning 11-785 Group Project</div>
+  </nav>
+
+  <div class="container">
+    <h1>Generated Caption</h1>
+    <p><%= caption %></p>
+    <form action="/text2text" method="POST" enctype="">
+      <input type="text" name="caption" id="caption" value="<%= caption %>" style="display: none;">
+      <button type="submit" id="submitButton">Generate Detailed Description</button>
+  </form>
+  </div>
+</body>
+</html>

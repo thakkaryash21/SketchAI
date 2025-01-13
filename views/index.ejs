@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SketchAI</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', Arial, sans-serif;
+            background: linear-gradient(135deg, #f0f2f5, #d9e4f5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        nav {
+            width: 100%;
+            background-color: rgb(176, 38, 25);
+            padding: 1em 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 10;
+        }
+
+        nav img {
+            height: 40px;
+            position: absolute;
+            left: 20px;
+        }
+
+        nav .title {
+            color: white;
+            font-size: 1.5em;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .container {
+            text-align: center;
+            background: white;
+            padding: 2em;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            margin-top: 7em;
+            animation: fadeIn 1.5s ease-in-out;
+            width: 90%;
+            max-width: 600px;
+        }
+
+        h1 {
+            color: rgb(176, 38, 25);
+        }
+
+        p {
+            color: #555;
+        }
+
+        .btn {
+            padding: 0.75em 1.5em;
+            font-size: 1em;
+            color: #fff;
+            background-color: rgb(176, 38, 25);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: rgb(176, 38, 25);
+        }
+
+        #imageInput,
+        #uploadLabel,
+        #submitButton {
+            display: none;
+        }
+
+        #uploadLabel {
+            background-color: #f1f1f1;
+            padding: 0.5em 1em;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 1em;
+        }
+
+        button[type="submit"] {
+            background-color: #28a745;
+            padding: 0.5em 1em;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: 1em;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #218838;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <img src="images/logo.png" alt="CMU SCS Logo">
+        <div class="title">Intro to Deep Learning 11-785 Project</div>
+    </nav>
+
+    <div class="container">
+        <h1>SketchAI</h1>
+        <p>Transform your sketches into professional images and automate marketplace integration.</p>
+        <!-- Get Started Button -->
+        <button class="btn" id="getStartedBtn" onclick="triggerFileUpload()">Get Started</button>
+
+        <!-- Form for image upload (hidden by default) -->
+        <form action="/upload" method="POST" enctype="multipart/form-data">
+            <input type="file" id="imageInput" name="image" accept="image/*">
+            <label for="imageInput" id="uploadLabel">Choose Image</label>
+
+            <!-- Color Picker (hidden by default) -->
+            <div id="colorPickerContainer" style="display: none; margin: 20px 0;">
+                <label for="colorPicker">Choose a color:</label>
+                <input type="color" id="colorPicker" name="color">
+            </div>
+
+            <button type="submit" id="submitButton" style="display: none;">Generate Caption</button>
+        </form>
+    </div>
+
+    <script>
+        // Function to trigger the file upload input when Get Started button is clicked
+        function triggerFileUpload() {
+            document.getElementById('getStartedBtn').style.display = 'none'; // Hide Get Started button
+            document.getElementById('imageInput').click(); // Trigger file input
+        }
+
+        // When the user selects an image, display the Generate Caption button and color picker
+        document.getElementById('imageInput').addEventListener('change', function () {
+            if (this.files.length > 0) {
+                document.getElementById('uploadLabel').innerText = `Selected: ${this.files[0].name}`; // Update label with filename
+                document.getElementById('uploadLabel').style.display = 'inline-block'; // Show label
+                document.getElementById('colorPickerContainer').style.display = 'block'; // Show color picker
+                document.getElementById('submitButton').style.display = 'inline-block'; // Show the Generate Caption button
+            }
+        });
+    </script>
+</body>
+
+</html>

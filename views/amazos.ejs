@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Model Car - Product Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+        .header {
+            background-color: #232f3e;
+            padding: 10px 20px;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .header a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        .breadcrumb {
+            background-color: #f5f5f5;
+            padding: 10px 20px;
+            font-size: 14px;
+            color: #555;
+        }
+        .breadcrumb a {
+            text-decoration: none;
+            color: #007185;
+            margin-right: 5px;
+        }
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+        .main {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 20px;
+            background-color: white;
+            max-width: 1200px;
+            margin: 20px auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        .product-images {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+        .product-images img {
+            width: 100%;
+            max-width: 400px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+        .product-details {
+            flex: 2;
+            padding: 20px;
+        }
+        .product-title {
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .rating {
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+        }
+        .rating img {
+            width: 16px;
+            margin-right: 5px;
+        }
+        .product-price {
+            color: #b12704;
+            font-size: 24px;
+            margin: 10px 0;
+            font-weight: bold;
+        }
+        .availability {
+            color: #007600;
+            font-size: 16px;
+            margin: 10px 0;
+        }
+        .buy-section {
+            margin: 20px 0;
+        }
+        .buy-section button {
+            background-color: #ffa41c;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+            margin-right: 10px;
+        }
+        .buy-section button:hover {
+            background-color: #e08e00;
+        }
+        .about-product {
+            margin-top: 30px;
+        }
+        .about-product h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        .about-product ul {
+            list-style-type: disc;
+            margin-left: 20px;
+            line-height: 1.6;
+        }
+        .sidebar {
+            flex: 1;
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+        }
+        .sidebar h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        .sidebar p {
+            margin: 10px 0;
+        }
+        .sidebar a {
+            color: #007185;
+            text-decoration: none;
+        }
+        .sidebar a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div><a href="#">Amazos</a></div>
+        <div>
+            <a href="#">Today's Deals</a>
+            <a href="#">Customer Service</a>
+            <a href="#">Prime</a>
+            <a href="#">Cart</a>
+        </div>
+    </div>
+
+    <div class="breadcrumb">
+        <a href="#">Home</a> &gt; 
+        <a href="#">Toys & Games</a> &gt; 
+        <a href="#">Diecast & Toy Vehicles</a> &gt; Model Car
+    </div>
+
+    <div class="main">
+        <div class="product-images">
+            <img src="./generated_image.png" alt="Model Car">
+        </div>
+
+        <div class="product-details">
+            <div class="product-title">Chair</div>
+            <div class="rating">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Star_rating_4.5_of_5.png/1024px-Star_rating_4.5_of_5.png" alt="4.5 stars">
+                <span>4.5 out of 5 stars | 234 Reviews</span>
+            </div>
+            <div class="product-price">$12.99</div>
+            <div class="availability">In Stock</div>
+            <div class="buy-section">
+                <button>Add to Cart</button>
+                <button>Buy Now</button>
+            </div>
+            <div class="about-product">
+                <h3>About this item</h3>
+                <ul>
+                    <li>Chair weighs 5.5oz, dimensions 2.36" x 2.36".</li>
+                    <li>Made with high-quality materials for durability and style.</li>
+                    <li>Perfect for home decor or as a thoughtful gift.</li>
+                    <li>Features a subtle and elegant design, evoking relaxation and nostalgia.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="sidebar">
+            <h3>Other Options</h3>
+            <p><a href="#">Model Car with Stand - $14.99</a></p>
+            <p><a href="#">Model Car - Premium Edition - $19.99</a></p>
+        </div>
+    </div>
+</body>
+</html>
